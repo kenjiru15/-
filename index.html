@@ -217,6 +217,33 @@
       line-height: 1.7;
     }
     .walk-heading p:last-child { max-width: 280px; color: var(--muted); font-size: 12px; line-height: 2; }
+    .route-summary {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 20px 0 15px;
+    }
+    .route-summary span {
+      padding: 5px 10px;
+      border: 1px solid #c9cabc;
+      color: var(--green-dark);
+      font-size: 10px;
+      letter-spacing: .04em;
+    }
+    .route-map {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 8px;
+      padding: 10px 14px;
+      background: var(--green-dark);
+      color: #f5f2e9;
+      font-size: 11px;
+      letter-spacing: .06em;
+      text-decoration: none;
+      transition: background .2s ease;
+    }
+    .route-map:hover { background: var(--green); }
     .route { margin: 0; padding: 0; list-style: none; }
     .route li {
       position: relative;
@@ -249,6 +276,13 @@
     }
     .route h3 { margin: 1px 0 2px; font-family: var(--serif); font-size: 16px; font-weight: 500; letter-spacing: .06em; }
     .route p { margin: 0; color: var(--muted); font-size: 11px; }
+    .route-extra {
+      margin-top: 8px;
+      padding: 18px 20px;
+      border: 1px solid #c9cabc;
+    }
+    .route-extra h3 { margin: 0 0 5px; font-family: var(--serif); font-size: 14px; font-weight: 500; }
+    .route-extra p { margin: 0; color: var(--muted); font-size: 11px; line-height: 1.9; }
 
     .visit-note {
       display: flex;
@@ -290,6 +324,7 @@
       .walk-layout { grid-template-columns: 1fr; gap: 28px; }
       .walk-heading h2 { font-size: 30px; }
       .walk-heading p:last-child { max-width: 360px; }
+      .route-summary { margin-top: 16px; }
       .visit-note { margin-block: 45px; padding: 23px 20px; }
       .footer-inner { align-items: flex-start; gap: 12px; flex-direction: column; }
     }
@@ -463,17 +498,28 @@
     <section class="walk" id="walk">
       <div class="wrap walk-layout">
         <div class="walk-heading">
-          <p class="eyebrow">A LITTLE WALKING ROUTE</p>
-          <h2>気ままに歩く、<br>佐倉の道。</h2>
-          <p>行き先を決めすぎず、町の景色を楽しみながら。道順や所要時間は、出発前に地図でご確認ください。</p>
+          <p class="eyebrow">SAKURA SHRINE WALK</p>
+          <h2>駅からめぐる、<br>城下町の六社。</h2>
+          <p>京成佐倉駅を起点に、田町・宮前・鏑木町を歩く周遊コース。町並みを楽しみながら、神社と小さな祠を訪ねます。</p>
+          <div class="route-summary" aria-label="コースの目安">
+            <span>徒歩 約2.5 km</span>
+            <span>約1.5〜2時間</span>
+            <span>駅発着・周遊</span>
+          </div>
+          <a class="route-map" href="https://www.google.com/maps/dir/?api=1&amp;origin=35.7252033,140.2297298&amp;destination=35.7252033,140.2297298&amp;waypoints=35.7238488,140.223313%7C35.7225771,140.2248306%7C35.7218297,140.225223%7C35.7193833,140.2269509%7C35.7192586,140.2269632%7C35.7192944,140.2268217&amp;travelmode=walking" target="_blank" rel="noopener noreferrer">徒歩ルートを地図で開く <span aria-hidden="true">↗</span></a>
         </div>
         <ol class="route">
-          <li><span class="route-number">一</span><div><h3>京成佐倉駅から出発</h3><p>まずは駅周辺の案内を確認して、町歩きの準備。</p></div></li>
-          <li><span class="route-number">二</span><div><h3>麻賀多神社へお参り</h3><p>城下町の空気を感じながら、鏑木町の社を訪ねます。</p></div></li>
-          <li><span class="route-number">三</span><div><h3>宮前の神社と小さな祠へ</h3><p>熊野神社、高丘稲荷神社、疱瘡神社、三峯神社を地図で確かめながら。</p></div></li>
-          <li><span class="route-number">四</span><div><h3>北側の社へ足をのばす</h3><p>山崎鎮守八幡神社、岩名麻賀多神社、三王神社を訪ねます。</p></div></li>
-          <li><span class="route-number">五</span><div><h3>時間があれば諏訪神社へ</h3><p>寺崎北方面は駅周辺から少し離れるため、地図で道順をご確認ください。</p></div></li>
+          <li><span class="route-number">一</span><div><h3>京成佐倉駅を出発</h3><p>駅前から田町方面へ。歩きやすい靴で出かけましょう。</p></div></li>
+          <li><span class="route-number">二</span><div><h3>愛宕神社</h3><p>田町の社にお参り。駅から町なかへ入る最初の立ち寄り先です。</p></div></li>
+          <li><span class="route-number">三</span><div><h3>熊野神社・高丘稲荷神社</h3><p>宮前エリアへ。近くにある二社を続けて訪ねます。</p></div></li>
+          <li><span class="route-number">四</span><div><h3>疱瘡神社・三峯神社</h3><p>麻賀多神社の近くにある小さな社にもお参りします。</p></div></li>
+          <li><span class="route-number">五</span><div><h3>麻賀多神社</h3><p>鏑木町の神社でひと休み。境内では静かにお参りを。</p></div></li>
+          <li><span class="route-number">六</span><div><h3>京成佐倉駅へ戻る</h3><p>町並みを楽しみながら駅へ。歩行距離・時間は経路や滞在時間で変わります。</p></div></li>
         </ol>
+        <aside class="route-extra">
+          <h3>もっと歩きたい方は</h3>
+          <p>駅の北側にある山崎鎮守八幡神社・岩名麻賀多神社・三王神社は、追加の立ち寄り先に。寺崎北の諏訪神社などは中心コースから離れるため、別コースとして地図で距離をご確認ください。</p>
+        </aside>
       </div>
     </section>
 
