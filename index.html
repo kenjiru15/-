@@ -167,7 +167,7 @@
       letter-spacing: .14em;
     }
     .section-heading > p:last-child { margin: 7px 0 0; color: var(--muted); font-size: 12px; }
-    .shrine-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .shrine-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
     .shrine-card {
       overflow: hidden;
       border: 1px solid var(--line);
@@ -175,12 +175,20 @@
       transition: transform .25s ease, box-shadow .25s ease;
     }
     .shrine-card:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(48, 57, 42, .08); }
-    .card-art { height: 208px; display: grid; place-items: center; background: var(--paper-deep); }
-    .card-art svg { width: 100%; height: 100%; }
+    .card-art {
+      height: 118px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-inline: 24px;
+      background: radial-gradient(circle at 78% 48%, rgba(166, 78, 63, .09) 0 43px, transparent 44px), var(--paper-deep);
+    }
+    .card-symbol { color: var(--red); font-family: var(--serif); font-size: 41px; line-height: 1; }
+    .card-number { color: #77796d; font-size: 10px; letter-spacing: .16em; }
     .card-body { padding: 24px 25px 26px; }
     .card-kicker { margin: 0 0 8px; color: var(--red); font-size: 10px; letter-spacing: .15em; }
     .card-body h3 { margin: 0; font-family: var(--serif); font-size: 22px; font-weight: 500; letter-spacing: .06em; }
-    .card-body > p:not(.card-kicker) { min-height: 68px; margin: 12px 0 17px; color: #6d7065; font-size: 12px; line-height: 1.9; }
+    .card-body > p:not(.card-kicker) { min-height: 48px; margin: 12px 0 17px; color: #6d7065; font-size: 12px; line-height: 1.9; }
     .card-footer {
       display: flex;
       align-items: center;
@@ -276,7 +284,7 @@
       .section-heading { margin-bottom: 28px; }
       .section-heading h2 { font-size: 30px; }
       .shrine-grid { grid-template-columns: 1fr; gap: 16px; }
-      .card-art { height: 190px; }
+      .card-art { height: 105px; }
       .card-body > p:not(.card-kicker) { min-height: auto; }
       .walk { padding-block: 63px; }
       .walk-layout { grid-template-columns: 1fr; gap: 28px; }
@@ -355,70 +363,98 @@
     <section class="wrap shrines" id="shrines" aria-labelledby="shrines-title">
       <div class="section-heading">
         <p class="eyebrow">SHRINES NEAR THE STATION</p>
-        <h2 id="shrines-title">駅の近くの三つの社</h2>
-        <p>気になる場所を見つけたら、地図を開いて散策へ。</p>
+        <h2 id="shrines-title">駅周辺で出会う、十の社</h2>
+        <p>神社のほか、町なかの小さな祠も含めてご紹介します。地図で場所を確かめながらお出かけください。</p>
       </div>
       <div class="shrine-grid">
         <article class="shrine-card">
-          <div class="card-art">
-            <svg viewBox="0 0 360 208" role="img" aria-label="麻賀多神社の社殿を描いたイラスト">
-              <rect width="360" height="208" fill="#e5e1d3"/>
-              <circle cx="274" cy="50" r="22" fill="#c98a6e" opacity=".7"/>
-              <path d="M0 152c70-36 119-32 174-7 71 33 115 18 186-6v69H0z" fill="#75836b"/>
-              <path d="M39 144c4-54 21-82 48-91 26 10 41 41 43 91zm213 7c5-68 26-102 59-112 31 11 49 51 51 112z" fill="#52674f"/>
-              <path d="M114 125h137l-20-19h-96z" fill="#293d31"/>
-              <path d="M126 125h113v44H126z" fill="#c6a889"/>
-              <path d="M114 126h137l-6-10H121z" fill="#a64e3f"/>
-              <path d="M141 139h18v30h-18zm32 0h18v30h-18zm32 0h18v30h-18z" fill="#f1eadb"/>
-              <path d="M92 169h178" stroke="#eee8d8" stroke-width="2"/>
-            </svg>
-          </div>
+          <div class="card-art" aria-hidden="true"><span class="card-symbol">⛩</span><span class="card-number">01 / 10</span></div>
           <div class="card-body">
             <p class="card-kicker">01 · KABURAGI</p>
             <h3>麻賀多神社</h3>
-            <p>佐倉の町を見守る、歴史ある神社。城下町の散策とあわせて訪れたい一社です。</p>
+            <p>鏑木町に鎮座する神社。駅周辺から城下町を歩くときに立ち寄りたい一社です。</p>
             <div class="card-footer"><span>佐倉市 鏑木町</span><a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=%E9%BA%BB%E8%B3%80%E5%A4%9A%E7%A5%9E%E7%A4%BE%20%E4%BD%90%E5%80%89%E5%B8%82" target="_blank" rel="noopener noreferrer">地図を見る ↗</a></div>
           </div>
         </article>
         <article class="shrine-card">
-          <div class="card-art">
-            <svg viewBox="0 0 360 208" role="img" aria-label="熊野神社の鳥居と木々を描いたイラスト">
-              <rect width="360" height="208" fill="#e5e1d3"/>
-              <path d="M0 162c70-28 121-24 174-5 60 22 119 11 186-11v62H0z" fill="#75836b"/>
-              <path d="M31 151c3-66 26-103 61-115 35 13 56 54 58 115zm168 0c4-81 28-123 68-136 37 14 58 62 61 136z" fill="#52674f"/>
-              <path d="M125 125h140M139 108h112" fill="none" stroke="#a64e3f" stroke-width="10" stroke-linecap="square"/>
-              <path d="M148 116v54m94-54v54" fill="none" stroke="#a64e3f" stroke-width="8"/>
-              <path d="M164 151h64v29h-64z" fill="#c6a889"/>
-              <path d="M157 151h78l-12-13h-54z" fill="#293d31"/>
-              <path d="M176 160h13v20h-13zm26 0h13v20h-13z" fill="#f1eadb"/>
-            </svg>
-          </div>
+          <div class="card-art" aria-hidden="true"><span class="card-symbol">⛩</span><span class="card-number">02 / 10</span></div>
           <div class="card-body">
             <p class="card-kicker">02 · MIYAMAE</p>
             <h3>熊野神社</h3>
-            <p>宮前の町なかに鎮座する神社。駅の北側へ足をのばして、静かなひとときを。</p>
+            <p>宮前三丁目の神社。高丘稲荷神社とあわせて、宮前周辺を散策できます。</p>
             <div class="card-footer"><span>佐倉市 宮前</span><a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=%E7%86%8A%E9%87%8E%E7%A5%9E%E7%A4%BE%20%E4%BD%90%E5%80%89%E5%B8%82%20%E5%AE%AE%E5%89%8D" target="_blank" rel="noopener noreferrer">地図を見る ↗</a></div>
           </div>
         </article>
         <article class="shrine-card">
-          <div class="card-art">
-            <svg viewBox="0 0 360 208" role="img" aria-label="高丘稲荷神社を囲む木々を描いたイラスト">
-              <rect width="360" height="208" fill="#e5e1d3"/>
-              <path d="M0 156c64-23 119-23 181-4 60 18 107 12 179-10v66H0z" fill="#75836b"/>
-              <path d="M17 154c3-77 31-119 71-131 39 15 61 64 63 131zm187 0c5-68 27-106 62-117 32 12 52 53 54 117z" fill="#52674f"/>
-              <path d="M102 129h151M118 111h119" fill="none" stroke="#a64e3f" stroke-width="11" stroke-linecap="square"/>
-              <path d="M130 120v54m99-54v54" fill="none" stroke="#a64e3f" stroke-width="8"/>
-              <path d="M151 146h56v35h-56z" fill="#c6a889"/>
-              <path d="M143 146h72l-10-14h-51z" fill="#293d31"/>
-              <path d="M163 157h13v24h-13zm23 0h13v24h-13z" fill="#f1eadb"/>
-              <path d="M74 181h217" stroke="#eee8d8" stroke-width="2"/>
-            </svg>
-          </div>
+          <div class="card-art" aria-hidden="true"><span class="card-symbol">⛩</span><span class="card-number">03 / 10</span></div>
           <div class="card-body">
             <p class="card-kicker">03 · MIYAMAE</p>
             <h3>高丘稲荷神社</h3>
-            <p>宮前エリアにある稲荷神社。熊野神社と一緒にめぐれば、町歩きの楽しみも広がります。</p>
+            <p>宮前三丁目にある稲荷神社。熊野神社と同じエリアにある立ち寄り先です。</p>
             <div class="card-footer"><span>佐倉市 宮前</span><a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=%E9%AB%98%E4%B8%98%E7%A8%B2%E8%8D%B7%E7%A5%9E%E7%A4%BE%20%E4%BD%90%E5%80%89%E5%B8%82" target="_blank" rel="noopener noreferrer">地図を見る ↗</a></div>
+          </div>
+        </article>
+        <article class="shrine-card">
+          <div class="card-art" aria-hidden="true"><span class="card-symbol">⛩</span><span class="card-number">04 / 10</span></div>
+          <div class="card-body">
+            <p class="card-kicker">04 · TAMACHI</p>
+            <h3>愛宕神社</h3>
+            <p>田町に鎮座する神社。旧成田街道周辺を歩きながら訪ねられます。</p>
+            <div class="card-footer"><span>佐倉市 田町</span><a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%84%9B%E5%AE%95%E7%A5%9E%E7%A4%BE%20%E4%BD%90%E5%80%89%E5%B8%82%20%E7%94%B0%E7%94%BA" target="_blank" rel="noopener noreferrer">地図を見る ↗</a></div>
+          </div>
+        </article>
+        <article class="shrine-card">
+          <div class="card-art" aria-hidden="true"><span class="card-symbol">⛩</span><span class="card-number">05 / 10</span></div>
+          <div class="card-body">
+            <p class="card-kicker">05 · MIYAMAE</p>
+            <h3>疱瘡神社</h3>
+            <p>宮前周辺に記録されている小さな神社。場所を地図で確認してお参りを。</p>
+            <div class="card-footer"><span>佐倉市 宮前周辺</span><a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=%E7%96%B1%E7%98%A1%E7%A5%9E%E7%A4%BE%20%E4%BD%90%E5%80%89%E5%B8%82" target="_blank" rel="noopener noreferrer">地図を見る ↗</a></div>
+          </div>
+        </article>
+        <article class="shrine-card">
+          <div class="card-art" aria-hidden="true"><span class="card-symbol">⛩</span><span class="card-number">06 / 10</span></div>
+          <div class="card-body">
+            <p class="card-kicker">06 · MIYAMAE</p>
+            <h3>三峯神社</h3>
+            <p>宮前周辺にある小さな神社。近くの神社と一緒に地図で位置を確かめて。</p>
+            <div class="card-footer"><span>佐倉市 宮前周辺</span><a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=%E4%B8%89%E5%B3%AF%E7%A5%9E%E7%A4%BE%20%E4%BD%90%E5%80%89%E5%B8%82" target="_blank" rel="noopener noreferrer">地図を見る ↗</a></div>
+          </div>
+        </article>
+        <article class="shrine-card">
+          <div class="card-art" aria-hidden="true"><span class="card-symbol">⛩</span><span class="card-number">07 / 10</span></div>
+          <div class="card-body">
+            <p class="card-kicker">07 · MIYAMAE</p>
+            <h3>山崎鎮守八幡神社</h3>
+            <p>宮前一丁目・下根の神社。駅から北へ足をのばす散策先のひとつです。</p>
+            <div class="card-footer"><span>佐倉市 宮前一丁目</span><a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=%E5%B1%B1%E5%B4%8E%E9%8E%AE%E5%AE%88%E5%85%AB%E5%B9%A1%E7%A5%9E%E7%A4%BE%20%E4%BD%90%E5%80%89%E5%B8%82" target="_blank" rel="noopener noreferrer">地図を見る ↗</a></div>
+          </div>
+        </article>
+        <article class="shrine-card">
+          <div class="card-art" aria-hidden="true"><span class="card-symbol">⛩</span><span class="card-number">08 / 10</span></div>
+          <div class="card-body">
+            <p class="card-kicker">08 · IWANA</p>
+            <h3>岩名麻賀多神社</h3>
+            <p>岩名の名を冠する麻賀多神社。町なかから少し足をのばして訪ねる一社です。</p>
+            <div class="card-footer"><span>佐倉市 宮前一丁目周辺</span><a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=%E5%B2%A9%E5%90%8D%E9%BA%BB%E8%B3%80%E5%A4%9A%E7%A5%9E%E7%A4%BE%20%E4%BD%90%E5%80%89%E5%B8%82" target="_blank" rel="noopener noreferrer">地図を見る ↗</a></div>
+          </div>
+        </article>
+        <article class="shrine-card">
+          <div class="card-art" aria-hidden="true"><span class="card-symbol">⛩</span><span class="card-number">09 / 10</span></div>
+          <div class="card-body">
+            <p class="card-kicker">09 · MIYAMAE</p>
+            <h3>三王神社</h3>
+            <p>宮前一丁目周辺の神社。北側エリアの散策とあわせて地図でご確認ください。</p>
+            <div class="card-footer"><span>佐倉市 宮前一丁目</span><a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=%E4%B8%89%E7%8E%8B%E7%A5%9E%E7%A4%BE%20%E4%BD%90%E5%80%89%E5%B8%82" target="_blank" rel="noopener noreferrer">地図を見る ↗</a></div>
+          </div>
+        </article>
+        <article class="shrine-card">
+          <div class="card-art" aria-hidden="true"><span class="card-symbol">⛩</span><span class="card-number">10 / 10</span></div>
+          <div class="card-body">
+            <p class="card-kicker">10 · TERASAKI-KITA</p>
+            <h3>諏訪神社</h3>
+            <p>寺崎北にある神社。駅周辺から少し範囲を広げて訪ねる散策先です。</p>
+            <div class="card-footer"><span>佐倉市 寺崎北</span><a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=%E8%AB%8F%E8%A8%AA%E7%A5%9E%E7%A4%BE%20%E4%BD%90%E5%80%89%E5%B8%82%20%E5%AF%BA%E5%B4%8E%E5%8C%97" target="_blank" rel="noopener noreferrer">地図を見る ↗</a></div>
           </div>
         </article>
       </div>
@@ -434,8 +470,9 @@
         <ol class="route">
           <li><span class="route-number">一</span><div><h3>京成佐倉駅から出発</h3><p>まずは駅周辺の案内を確認して、町歩きの準備。</p></div></li>
           <li><span class="route-number">二</span><div><h3>麻賀多神社へお参り</h3><p>城下町の空気を感じながら、鏑木町の社を訪ねます。</p></div></li>
-          <li><span class="route-number">三</span><div><h3>宮前エリアを散策</h3><p>熊野神社、高丘稲荷神社へ。周辺の道もゆっくり楽しんで。</p></div></li>
-          <li><span class="route-number">四</span><div><h3>お気に入りの景色を探す</h3><p>帰り道は寄り道しながら、佐倉の町並みをもうひと歩き。</p></div></li>
+          <li><span class="route-number">三</span><div><h3>宮前の神社と小さな祠へ</h3><p>熊野神社、高丘稲荷神社、疱瘡神社、三峯神社を地図で確かめながら。</p></div></li>
+          <li><span class="route-number">四</span><div><h3>北側の社へ足をのばす</h3><p>山崎鎮守八幡神社、岩名麻賀多神社、三王神社を訪ねます。</p></div></li>
+          <li><span class="route-number">五</span><div><h3>時間があれば諏訪神社へ</h3><p>寺崎北方面は駅周辺から少し離れるため、地図で道順をご確認ください。</p></div></li>
         </ol>
       </div>
     </section>
@@ -452,7 +489,7 @@
   <footer class="site-footer">
     <div class="wrap footer-inner">
       <span>佐倉、神社さんぽ。</span>
-      <span>京成佐倉駅から、町の社を訪ねる小さなガイド</span>
+      <span>掲載位置は<a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>を参照。小さな祠を含みます。</span>
     </div>
   </footer>
 </body>
